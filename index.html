@@ -43,6 +43,14 @@
     display: block;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   }
+  
+  .caption {
+    font-size: 14px;
+    color: #888;
+    font-style: italic;
+    margin-top: -5px;
+    margin-bottom: 20px;
+  }
 
   button {
     margin-top: 20px;
@@ -57,7 +65,6 @@
   }
   button:active { transform: scale(0.95); }
 
-  /* Летящие сердечки */
   .heart {
     position: fixed;
     color: #e91e63;
@@ -78,18 +85,10 @@
     h1 { font-size: 20px; }
     p { font-size: 15px; }
   }
-  .caption {
-  font-size: 14px;
-  color: #888;
-  font-style: italic;
-  margin-top: 5px;
-  margin-bottom: 20px;
-}
 </style>
 </head>
 <body>
 
-<!-- МУЗЫКА: замени "vahteram.mp3" на имя твоего файла -->
 <audio id="music" loop>
   <source src="vahteram.mp3" type="audio/mpeg">
 </audio>
@@ -97,33 +96,28 @@
 <div class="card">
   <h1>Любимой от лисёнка 🦊❤️</h1>
 
-  <!-- КАРТИНКА 1: замени "photo1.jpg" на имя своего файла -->
-  <img src="photo1.jpg" alt="Ну мыыы🥹🥹🥹" class="photo">
-  <p class="caption"> Ну мыыы🥹🥹🥹</p>
-  <p> Ты — самое лучшее, что со мной случилось ❤️ Ты первая мысль утром и последняя ночью. Ни одного дня не прошло без мысли о тебе, зайка. Даже если сейчас грустно, помни: я рядом. Эта открытка — маленький знак, что ты очень важна для меня.</p>
+  <img src="photo1.jpg" alt="Наше фото" class="photo">
+  <p class="caption">Ну мыыы🥹🥹🥹</p>
 
-  <!-- КАРТИНКА 2: замени "photo2.jpg" на имя своего файла -->
-  <img src="photo2.jpg" alt="Мыыыы🥹" class="photo">
-  <p class="caption"> Мыыыы🥹🥹🥹</p>
+  <p>Ты — самое лучшее, что со мной случилось ❤️ Ты первая мысль утром и последняя ночью. Ни одного дня не прошло без мысли о тебе, зайка. Даже если сейчас грустно, помни: я рядом. Эта открытка — маленький знак, что ты очень важна для меня.</p>
+
+  <img src="photo2.jpg" alt="Ещё одно фото" class="photo">
+  <p class="caption">Мыыыы🥹🥹🥹</p>
+
   <p>Пока я пишу этот текст у меня поднимается комочек от счастья. Я очень сильно люблю тебя и дорожу тобой 🥹🥹🥹🥹🥹💞💞💞💞💞💞💞💋💋💋💋💋💋💋💋💋🐰</p>
 
-  
 <script>
-  // Создаём летящие сердечки
   function createHeart() {
     const heart = document.createElement('div');
     heart.className = 'heart';
-    heart.innerHTML = '❤️';
+    heart.innerHTML = '❤';
     heart.style.left = Math.random() * 100 + 'vw';
     heart.style.animationDuration = (4 + Math.random() * 4) + 's';
     heart.style.fontSize = (16 + Math.random() * 24) + 'px';
     document.body.appendChild(heart);
-    // Удаляем сердечко после завершения анимации
     setTimeout(() => heart.remove(), 8000);
   }
-  // Запускаем создание сердечек постоянно
   setInterval(createHeart, 400);
-  // Первые сердечки сразу
   for (let i = 0; i < 10; i++) setTimeout(createHeart, i * 200);
 </script>
 
